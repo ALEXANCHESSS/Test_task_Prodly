@@ -1,0 +1,7 @@
+pytest
+termcolor
+allure-python-commons
+webdriver-manager
+selenium
+pytest-html
+selenium-wire
