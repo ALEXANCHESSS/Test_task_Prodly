@@ -1,7 +1,6 @@
 
 
 import pytest
-import uuid
 from seleniumwire import webdriver
 from selenium.webdriver import DesiredCapabilities
 from selenium.webdriver.chrome.options import Options
@@ -38,7 +37,6 @@ def web_browser(request, chrome_options):
     browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()),
                                chrome_options=chrome_options, desired_capabilities=capabilities)
     browser.set_window_size(1400, 1000)
-    # browser.get(path)
 
     yield browser
 

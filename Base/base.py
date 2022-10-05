@@ -209,7 +209,7 @@ class WebPage(object):
         else:
             return f"Request with url {url} does not exist"
 
-    def get_satus_code(self, url):
+    def get_status_code(self, url):
         for request in self._web_driver.requests:
             if request.url == url:
                 return request.response.status_code

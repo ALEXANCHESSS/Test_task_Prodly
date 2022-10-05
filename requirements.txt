@@ -5,3 +5,4 @@ webdriver-manager
 selenium
 pytest-html
 selenium-wire
+pytest-xdist

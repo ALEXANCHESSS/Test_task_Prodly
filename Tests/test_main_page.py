@@ -1,14 +1,19 @@
 from Config.config import TestData
 from Pages.main_page import MainPage
 from Tests.test_base import BaseTest
+import pytest
 
 
 class TestMain(BaseTest):
 
-    def test_main_page(self, web_browser):
-        """Проверка открытия главной страницы"""
+    @pytest.fixture(scope='function')
+    def setup(self, web_browser):
         self.main_page = MainPage(web_browser)
-        body = self.main_page.get_satus_code(TestData.URL_MAIN)
+
+    @pytest.mark.usefixtures("setup")
+    def test_main_page(self):
+        """Проверка открытия главной страницы"""
+        body = self.main_page.get_status_code(TestData.URL_MAIN)
         assert body == 200
         assert self.main_page.visible_button_login()
 
